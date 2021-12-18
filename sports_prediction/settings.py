@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mqm$ibd_b6%38w9*vujcrycmn*(nrd+p3v*p)g=a+6ud(uz#%q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sportspredictionapp.herokuapp.com']
 
 
 # Application definition
