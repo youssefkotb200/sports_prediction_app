@@ -1,0 +1,27 @@
+{% extends '../app/base..html' %}
+{% block links %}
+    <script src="../../static/script.js"></script>
+{% endblock %}
+{% block main %}
+<div class="box">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Ranking</th>
+                <th scope="col">Logo</th>
+                <th id="N" scope="col">Name</th>
+                <th scope="col">MP</th>
+                <th id="W" scope="col">W</th>
+                <th id="D" scope="col">D</th>
+                <th id="L" scope="col">L</th>
+                <th id="GF" scope="col">GF</th>
+                <th id="GA" scope="col">GA</th>
+                <th scope="col">GD</th>
+                <th scope="col">PTS</th>
+            </tr>
+        </thead>
+        <tbody id="standings">
+        </tbody>
+    </table>
+</div>
+{% endblock %}

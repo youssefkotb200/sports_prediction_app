@@ -1,0 +1,35 @@
+{% extends '../app/base..html' %}
+{% block links %}
+    <script src="../../static/index.js"></script>
+{% endblock %}
+{% block main %}
+<div class="top-statics">
+    <div class="box">
+        <div class="top-data">
+            <h3>Top Scores</h3>
+            <div class="stat-box-x" id="total">
+            </div>
+        </div>
+        <div class="top-data">
+            <h3>Top Assists</h3>
+            <div class="stat-box-x"  id="assists">
+            </div>
+        </div>
+        <div class="top-data">
+            <h3>Top Yellow Cards</h3>
+            <div class="stat-box-x" id="yellow">
+            </div>
+        </div>
+        <div class="top-data">
+            <h3>Top Red Cards</h3>
+            <div class="stat-box-x" id="red">
+            </div>
+        </div>
+    </div>
+</div>
+    <h2 class="title">Premier Leauge Clubs</h2>
+    <div class="clubs">
+        <div class="box" id="clubs_box">
+        </div>
+    </div>
+{% endblock %}

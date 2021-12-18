@@ -1,0 +1,22 @@
+{% extends '../app/base..html' %}
+{% block links %}
+{% endblock %}
+{% block main %}
+<div class="form-main-box">
+    <div class="background">
+        <img src="https://thumbs.dreamstime.com/b/teens-playing-soccer-football-match-competition-two-youth-teams-boys-blue-black-sport-uniforms-running-kicking-65602266.jpg">
+    </div>
+    <div class="form-box">
+        <form method="post" action="/login">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
