@@ -71,7 +71,7 @@ TEMPLATES = [
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "app/static/"),
 )
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 WSGI_APPLICATION = 'sports_prediction.wsgi.application'
 
 
