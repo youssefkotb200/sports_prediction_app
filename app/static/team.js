@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetch(`https://v3.football.api-sports.io/teams?id=${url}&league=39&season=2021`, requestOptions)
     .then(response => response.json())
-    .then(result => {       
+    .then(result => {    
+        console.log(result)   
             main = document.querySelector('.club-box')
             main.innerHTML = ''
             div_1 = document.createElement('div')    
