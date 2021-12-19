@@ -446,6 +446,7 @@ footer
 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 60px 0 30px 0;
 }
 .statics h3
