@@ -1,19 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var url = parseInt(window.location.href.slice(27))
     var myHeaders = new Headers();
     myHeaders.append("x-rapidapi-key", "d30f039d8a1dd51e4e62f607d3d75f23");
     myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
-
+    var url = window.location.href.split('/')
+    let code = 0
+    for (const i in url)
+    {
+        if (hasNumbers(url[i]))
+        {
+            code = parseInt(url[i])
+        }
+    }
     var requestOptions = {
     method: 'GET',
     headers: myHeaders,
     redirect: 'follow'
     };
 
-    fetch(`https://v3.football.api-sports.io/teams?id=${url}&league=39&season=2021`, requestOptions)
+    fetch(`https://v3.football.api-sports.io/teams?id=${code}&league=39&season=2021`, requestOptions)
     .then(response => response.json())
     .then(result => {    
-        console.log(result)   
             main = document.querySelector('.club-box')
             main.innerHTML = ''
             div_1 = document.createElement('div')    
@@ -41,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => console.log('error', error));
 
 
-    fetch(`https://v3.football.api-sports.io/teams/statistics?season=2021&team=${url}&league=39`, requestOptions)
+    fetch(`https://v3.football.api-sports.io/teams/statistics?season=2021&team=${code}&league=39`, requestOptions)
     .then(response => response.json())
     .then(result => {  
         let gd =  parseInt(result.response.goals.for.total.total) - parseInt(result.response.goals.against.total.total)
@@ -62,14 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => console.log('error', error));
 
 
-    fetch(`https://v3.football.api-sports.io/players/squads?team=${url}`, requestOptions)
+    fetch(`https://v3.football.api-sports.io/players/squads?team=${code}`, requestOptions)
     .then(response => response.json())
     .then(result => {   
         squad = document.querySelector('.squad')
         squad.innerHTML = ''
         for (const i in result.response[0].players)
         {
-            console.log(result.response[0].players[i])
             player = document.createElement('div')
             player.className = 'player'
             player.innerHTML = `
@@ -86,3 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.log('error', error));
 })
+
+function hasNumbers(t)
+{
+    var regex = /\d/g;
+    return regex.test(t);
+}   
